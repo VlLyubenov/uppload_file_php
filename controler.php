@@ -13,13 +13,12 @@
         $filename = $_FILES['file']['name'];
         echo "Filename Validated -> ".$filename."<br>";
 
-        $filedestination = "upload_file/uploads/".$filename;
+        $filedestination = "uploads/".$filename;
         echo "Destination set -> ".$filedestination."<br>"; 
 
-        chmod("/var/www/html/apps_exercise/upload_file/uploads", 0777);
-        if(move_uploaded_file( $filetmp, $filedestination)){
+        if(move_uploaded_file( $filetemp, $filedestination)){
         echo "Success!";}else{
             echo "Upload error";
         }
-        // header("Location: form.php?fileuploaded");
+        // header("Location: form.php?acion=True");
     }
